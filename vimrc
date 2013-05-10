@@ -121,9 +121,15 @@ inoremap <leader>k <esc>kA
 nnoremap <C-w> diw
 
 " Exit document.
-inoremap <leader>q :q<cr>
-nnoremap <leader>q :q<cr>
-vnoremap <leader>q :q<cr>
+inoremap <leader><leader>q :q<cr>
+nnoremap <leader><leader>q :q<cr>
+vnoremap <leader><leader>q :q<cr>
+
+"Esc is too far away
+inoremap <leader>q <esc>
+nnoremap <leader>q <esc>
+vnoremap <leader>q <esc>
+
 
 "                Search:
 "----------------------------------

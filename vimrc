@@ -116,6 +116,11 @@ inoremap <leader>k <esc>kA
 " Delete word in normal mode using ctrl-w
 nnoremap <C-w> diw
 
+" Exit document.
+inoremap <leader>q :q<cr>
+nnoremap <leader>q :q<cr>
+vnoremap <leader>q :q<cr>
+
 "                Search:
 "----------------------------------
 

@@ -49,6 +49,8 @@ set expandtab
 set wildmenu
 set wildmode=list:longest,full
 
+set wrap linebreak nolist
+
 set showcmd
 set encoding=utf-8
 set fileencoding=utf-8
@@ -61,6 +63,7 @@ set undolevels=1000                          " 1000 undos
 
 set scrolloff=3                              " keep at least 3 lines above/below
 set sidescrolloff=5                          " keep at least 5 lines left/right
+set display=lastline
 
 "               Keybindings:
 "----------------------------------
@@ -121,14 +124,16 @@ inoremap <leader>k <esc>kA
 nnoremap <C-w> diw
 
 " Exit document.
-inoremap <leader><leader>q :q<cr>
 nnoremap <leader><leader>q :q<cr>
-vnoremap <leader><leader>q :q<cr>
+
+" Write to disk
+nnoremap <leader><leader>w :w<cr>
 
 "Esc is too far away
 inoremap <leader>q <esc>
 nnoremap <leader>q <esc>
 vnoremap <leader>q <esc>
+cnoremap <leader>q <esc>
 
 
 "                Search:

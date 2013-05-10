@@ -46,6 +46,10 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+set wildmenu
+set wildmode=list:longest,full
+
+set showcmd
 set encoding=utf-8
 set fileencoding=utf-8
 set backspace=indent,eol,start               " backspace over all kinds of things

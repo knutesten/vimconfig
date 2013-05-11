@@ -2,7 +2,12 @@
 "----------------------------------
 set nocompatible                              " be iMproved
 
-set rtp+=~/.vim/bundle/vundle/
+if (has("win32"))
+	set rtp+=~/vimfiles/bundle/vundle/
+else
+  set rtp+=~/.vim/bundle/vundle/
+endif
+
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -65,6 +70,19 @@ set scrolloff=3                              " keep at least 3 lines above/below
 set sidescrolloff=5                          " keep at least 5 lines left/right
 set display=lastline
 
+" Change font size
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 17
+  elseif has("gui_win32")
+    set guifont=Consolas:h17:cANSI
+  endif
+endif
+
+" Remove menu for gVim
+set guioptions=''
+
+
 "               Keybindings:
 "----------------------------------
 let mapleader=','
@@ -114,7 +132,7 @@ inoremap <leader>< <><Esc>i
 inoremap <leader><leader> <esc>la
 
 " Auto create brackets
-inoremap {<cr> {}<esc>kA<cr>
+inoremap {<cr> {<cr>}<esc>kA<cr>
 
 " Jump one line from insert mode.
 inoremap <leader>j <esc>jA

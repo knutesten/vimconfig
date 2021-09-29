@@ -11,18 +11,6 @@ then
   rm .vimrc
 fi
 
-if [ -e .vim ];
-then
-  mkdir .old > /dev/null
-  mv .vim .old
-fi
-
-if [ -e .vimrc ];
-then
-  mkdir .old > /dev/null
-  mv .vimrc .old
-fi
-
 ln -s ${configdir}/vim .vim
 ln -s ${configdir}/vimrc .vimrc
 

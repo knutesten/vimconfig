@@ -2,12 +2,8 @@
 "----------------------------------
 set nocompatible                              " be iMproved
 
-if (has("win32"))
-	set rtp+=~/vimfiles/bundle/vundle/
-else
-  set rtp+=~/.vim/bundle/vundle/
-endif
 
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -87,17 +83,9 @@ set guioptions=''
 "----------------------------------
 let mapleader=','
 
-set pastetoggle=<F2>                         " paste with F2
-
 " forgetting to leave insertmode
 imap jj <Esc>
 imap kkk <Esc>
-
-" It's 2012.
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
 
 " window movement
 no <C-L> <C-W>l
@@ -105,53 +93,14 @@ no <C-H> <C-W>h
 no <C-J> <C-W>j
 no <C-K> <C-W>k
 
-"tab movement
-map <S-h> gT
-map <S-l> gt
-
-" Y and D behaves
-nnoremap D d$
-nnoremap Y y$
-
 " sudo write
 cmap w!! w !sudo tee % >/dev/null
-
-" windows style {
-imap  {
-
-" Auto complete brackets and quotes
-inoremap <leader>( ()<Esc>i
-inoremap <leader>[ []<Esc>i
-inoremap <leader>{ {}<Esc>i
-inoremap <leader> {}<Esc>i
-inoremap <leader>' ''<Esc>i
-inoremap <leader>" ""<Esc>i
-inoremap <leader>< <><Esc>i
-
-" Go out of brackets
-inoremap <leader><leader> <esc>la
-
-" Auto create brackets
-inoremap {<cr> {<cr>}<esc>kA<cr>
-
-" Jump one line from insert mode.
-inoremap <leader>j <esc>jA
-inoremap <leader>k <esc>kA
-
-" Delete word in normal mode using ctrl-w
-nnoremap <C-w> diw
 
 " Exit document.
 nnoremap <leader><leader>q :q<cr>
 
 " Write to disk
 nnoremap <leader><leader>w :w<cr>
-
-"Esc is too far away
-inoremap <leader>q <esc>
-nnoremap <leader>q <esc>
-vnoremap <leader>q <esc>
-cnoremap <leader>q <esc>
 
 
 "                Search:
